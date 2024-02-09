@@ -1,5 +1,5 @@
 <?php
-$a = array(1,2,3,4,5,6,7,8,9,10);
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 foreach ($a as $b) {
     echo "<br>";
@@ -8,12 +8,10 @@ foreach ($a as $b) {
 }
 
 
-$info = array('id' => 1, 'name' => 'Dinh Chieu', 'age' =>19);
+$info = array('id' => 1, 'name' => 'Dinh Chieu', 'age' => 19);
 
 foreach ($info as $key => $value) {
     echo '<br>';
     echo "{$key} : {$value}";
     echo "<br>";
 }
-
-?>

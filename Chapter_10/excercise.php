@@ -9,11 +9,13 @@ $redirect_to = "https://www.facebook.com/profile.php?id=100032686231256&locale=v
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="http://localhost:3000/Chapter_10/excercise.php" method="post" onsubmit="return validateForm()">
         <div class="altitude">
@@ -27,20 +29,21 @@ $redirect_to = "https://www.facebook.com/profile.php?id=100032686231256&locale=v
             <input type="password" name="password" id="password" placeholder="Mật khẩu">
             <p class="errorPassword">Vui lòng nhập mật khẩu</p>
         </div>
-            
+
         <div>
             <input type="hidden" name="redirect_to" value="<?php echo $redirect_to; ?>">
             <input type="submit" name="btn" value="Đăng nhập">
         </div>
     </form>
 
-    <style> 
+    <style>
         * {
             margin: 0;
             padding: 0;
         }
 
-        .errorUsername, .errorPassword {
+        .errorUsername,
+        .errorPassword {
             margin: 4px 0 4px;
             font-size: small;
             color: red;
@@ -71,4 +74,5 @@ $redirect_to = "https://www.facebook.com/profile.php?id=100032686231256&locale=v
         }
     </script>
 </body>
+
 </html>

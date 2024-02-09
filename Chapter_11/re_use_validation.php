@@ -66,9 +66,6 @@ function checked_checkbox($value_1, $value_2)
 
 
 
-
-
-
 print_r($_POST);
 
 ?>

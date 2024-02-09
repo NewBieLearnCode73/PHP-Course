@@ -5,7 +5,8 @@ $a = 10;
 $b = 20;
 
 
-function sum(){
+function sum()
+{
 
 
     return $GLOBALS['a'] + $GLOBALS['b'];

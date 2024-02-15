@@ -20,6 +20,8 @@ $_FILES['file']['tmp_name'] => Đường dẫn tạm thời của file
 $_FILES['file']['error'] => Thông báo lỗi
 ```
 
+-   Trong đó `'file'` trong mảng `$_FILES` là giá trị được đặt trong name của thẻ input
+
 ## XỬ LÝ UPLOAD
 
 ```php

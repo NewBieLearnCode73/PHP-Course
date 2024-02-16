@@ -1,8 +1,6 @@
 <?php
 require 'data/post.php'; // Chứa mảng dữ liệu bài viết
 require 'lib/data.php';  // Chỉ chứa hàm xem mảng đó có in ra được dữ liệu hay không (Không có cũng được)
-require 'lib/template.php'; // Chứa header và footer
-get_header();
 ?>
 
 <?php
@@ -16,8 +14,4 @@ if (file_exists($path)) {
 } else {
     require('inc/404.php');
 }
-?>
-
-<?php
-get_footer();
 ?>

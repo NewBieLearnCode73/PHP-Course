@@ -4,18 +4,46 @@ body {
     line-height: 23px;
 }
 
+#header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#user_login {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#user_login strong {
+    font-weight: bold;
+}
+
+#user_login a {
+    text-decoration: none;
+}
+
+#logo {
+    --center-text: 70px;
+    margin: 0 auto;
+    height: var(--center-text);
+    text-align: center;
+    line-height: var(--center-text);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
 #wrapper {
     width: 960px;
     margin: 0 auto;
 }
 
-#header,
-#footer {
-    background: #029ef3;
-}
-
 ul#main-menu {
     text-align: center;
+    background: #029ef3;
 }
 
 ul#main-menu li {
@@ -48,4 +76,5 @@ ul.list_post li {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    background: #029ef3;
 }

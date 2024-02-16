@@ -1,3 +1,7 @@
+<?php
+require 'lib/template.php'; // Chứa header và footer
+get_header();
+?>
 <div id="content">
     <h1>Tin tức</h1>
     <?php
@@ -21,3 +25,6 @@
     }
     ?>
 </div>
+<?php
+get_footer();
+?>

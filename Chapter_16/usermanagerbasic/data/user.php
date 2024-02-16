@@ -14,7 +14,7 @@ $list_user = array(
         'id' => 1,
         'fullname' => 'Nguyễn Đình Chiêu',
         'username' => 'chieu987bl',
-        'password' => md5('ChieuChieu123@'),
+        'password' => md5('ChieuChieu123'),
         'email' => 'ndchieu73@gmail.com',
     ),
     2 => array(

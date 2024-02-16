@@ -1,7 +1,7 @@
 <?php
-$error = array();
+require 'data/user.php';
 
-show_array($list_user);
+$error = array();
 
 function reUse($value)
 {
@@ -52,6 +52,13 @@ function is_login_cpl()
             // Lưu trữ phiên đăng nhập
             $_SESSION['is_login'] = true;
             $_SESSION['user_login'] = $_POST['username'];
+            // SỬ dụng cookie để ghi nhớ đăng nhập
+            if (!empty($_POST['remember_me'])) {
+                setcookie('is_login', true,  time() + 86400, '/');
+                setcookie('user_login', $_POST['username'],  time() + 86400, '/');
+            }
+
+
             // Chuyển hướng vào bên trong hệ thống
             redirect('?pages=home');
         } else {
@@ -87,11 +94,17 @@ function is_login_cpl()
             <input type="password" id="password" name="password" value="" placeholder="Password">
             <?php check_password(); ?>
 
+            <div class="option_login">
+                <input type="checkbox" name="remember_me" id="remember_me">
+                <label for="remember_me">Ghi nhớ đăng nhập</label>
+                <a href="">Quên mật khẩu?</a>
+            </div>
+
             <input type="submit" id="btn-login" name="btn-login" value="Đăng nhập">
             <?php is_login_cpl() ?>
         </form>
 
-        <a href="">Quên mật khẩu?</a>
+
     </div>
 </body>
 

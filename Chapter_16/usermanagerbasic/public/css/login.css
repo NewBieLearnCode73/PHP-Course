@@ -49,10 +49,25 @@ form {
     cursor: pointer;
 }
 
+#wp-form-login input[type="checkbox"] {
+    width: auto;
+}
+
+.option_login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.option_login label[for="remember_me"] {
+    margin-right: 29px;
+}
+
 #wp-form-login a {
     color: #535353;
     display: block;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .show-error {

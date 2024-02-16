@@ -13,7 +13,9 @@
     <div id="wrapper">
         <div id="header">
             <div id="user_login">
-                <p>Xin chào <strong><?php echo $_SESSION['user_login'] ?></strong> <a href="">(Thoát)</a> </p>
+                <p>Xin chào <strong><?php if (is_login()) {
+                                        echo info_user('username');
+                                    } ?></strong> <a href="?page=logout">(Thoát)</a> </p>
             </div>
             <a href="" id="logo">DINHCHIEU</a>
             <ul id="main-menu">

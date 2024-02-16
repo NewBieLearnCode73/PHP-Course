@@ -1,6 +1,10 @@
 <?php
-require 'data/post.php'; // Chứa mảng dữ liệu bài viết
-require 'lib/data.php';  // Chỉ chứa hàm xem mảng đó có in ra được dữ liệu hay không (Không có cũng được)
+session_start();
+ob_start();
+require 'data/user.php'; // Chứa mảng dữ liệu tài khoản
+require 'lib/data.php'; // Function
+require 'lib/url.php';
+require 'lib/user.php';
 ?>
 
 <?php

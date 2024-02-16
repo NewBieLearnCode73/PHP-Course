@@ -13,7 +13,7 @@
     <div id="wrapper">
         <div id="header">
             <div id="user_login">
-                <p>Xin chào <strong>Admin</strong> <a href="">(Thoát)</a> </p>
+                <p>Xin chào <strong><?php echo $_SESSION['user_login'] ?></strong> <a href="">(Thoát)</a> </p>
             </div>
             <a href="" id="logo">DINHCHIEU</a>
             <ul id="main-menu">

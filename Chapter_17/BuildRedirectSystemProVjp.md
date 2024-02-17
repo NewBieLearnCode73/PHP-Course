@@ -17,3 +17,20 @@ $act = $_GET[act];
 
 4. Goi file xử lý hiện tại
    `require($path);`
+
+---
+
+Tùy biến giao diện
+
+-   Tùy biến header
+-   Tùy biến sidebar
+-   Tùy biến foooter
+-   Tùy biến khối giao diện
+
+**WORDPRESS**
+Xây dựng các hàm
+
+-   get_header()
+-   get_footer()
+-   get_sidebar()
+-   get_template_part()

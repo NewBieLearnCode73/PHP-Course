@@ -1,7 +1,12 @@
 <?php
-function get_header()
+function get_header($version = '')
 {
-    $path_header = 'inc/header.php';
+    if (!empty($version)) {
+        $path_header = "inc/header_{$version}.php";
+    } else {
+        $path_header = 'inc/header.php';
+    }
+
     if (file_exists($path_header)) {
         require($path_header);
     } else {

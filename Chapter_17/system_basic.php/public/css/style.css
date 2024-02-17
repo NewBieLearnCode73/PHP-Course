@@ -29,6 +29,15 @@ ul#main-menu li a {
     text-decoration: none;
 }
 
+/* Multi Template */
+#header.mod-page {
+    background: orange;
+}
+
+#header.mod-product {
+    background: black;
+}
+
 #content {
     min-height: 700px;
     padding: 20px 0;

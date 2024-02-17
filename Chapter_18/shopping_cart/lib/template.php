@@ -23,3 +23,13 @@ function get_footer()
         echo "Không tồn tại đường dẫn {$path_footer}";
     }
 }
+
+function get_sidebar()
+{
+    $path_footer = 'inc/sidebar.php';
+    if (file_exists($path_footer)) {
+        require($path_footer);
+    } else {
+        echo "Không tồn tại đường dẫn {$path_footer}";
+    }
+}

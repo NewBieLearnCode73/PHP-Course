@@ -13,11 +13,7 @@ $list_product_cat = array(
     ),
     2 => array(
         'id' => 2,
-        'cat title' => "Macbook"
-    ),
-    3 => array(
-        'id' => 3,
-        'cal_title' => "Laptop"
+        'cat_title' => "Macbook"
     ),
 );
 
@@ -36,7 +32,7 @@ Id danh mục => cart_id
 $list_product = array(
     1 => array(
         'id' => 1,
-        'product title' => 'Samsung Galaxy S21 FE 5G',
+        'product_title' => 'Samsung Galaxy S21 FE 5G',
         'price' => 8490000,
         'code' => 'UN#1',
         'product_desc' => 'Samsung Galaxy S21 FE 5G (6GB/128GB) được Samsung ra mắt với dáng dấp thời thượng, cấu hình khỏe, chụp ảnh đẹp với bộ 3 camera chất lượng, thời lượng pin đủ dùng hằng ngày và còn gì nữa? Mời bạn khám phá qua nội dung sau ngay.',
@@ -47,27 +43,27 @@ $list_product = array(
     ),
     2 => array(
         'id' => 2,
-        'product title' => 'IPHONE 7 PLUS',
+        'product_title' => 'IPHONE 12',
         'price' => 7000000,
         'code' => 'UNI#2',
         'product_desc' => 'iPhone 7 256 GB mang trên mình thiết kế quen thuộc từ thời iPhone 6, máy được trang bị bộ nhớ lưu trữ lớn, khả năng chống nước cao cấp, dàn loa stereo cho âm thanh hay và cấu hình cực mạnh.',
-        'product_thumb' => 'https://cdn.tgdd.vn/Products/Images/42/87838/iphone-7-256gb-vanghong-1-2-org.jpg',
+        'product_thumb' => 'https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-trang-13-600x600.jpg',
         'product_content' => '<p>Một sự cải thiện đáng kể so với iPhone 6s trước đó, những tấm ảnh chụp selfie của bạn càng thêm độ chi tiết và sắc nét, bộ nhớ lớn 256 GB cũng giúp bạn thoải mái chụp và lưu trữ ảnh mà không lo hết dung lượng để lưu.</p><p><img src="https://cdn.tgdd.vn/Products/Images/42/87838/iphone-7-256gb6-1.jpg"></p>',
         'cart_id' => 1
     ),
     3 => array(
         'id' => 3,
-        'product title' => 'Điện thoại iPhone 11 64GB',
+        'product_title' => 'Điện thoại iPhone 11 64GB',
         'price' => 10000000,
         'code' => 'UNI#3',
         'product_desc' => 'Apple đã chính thức trình làng bộ 3 siêu phẩm iPhone 11, trong đó phiên bản iPhone 11 64GB có mức giá rẻ nhất nhưng vẫn được nâng cấp mạnh mẽ như iPhone Xr ra mắt trước đó.',
-        'product_thumb' => 'https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-tgdd42.jpg',
+        'product_thumb' => 'https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-600x600.jpg',
         'product_content' => '<p>Đây là một điều được xem là bước ngoặt bởi những chiếc smartphone Android có nhiều camera hiện nay sẽ thường bị sai lệch về màu sắc khi chuyển đổi qua lại giữa các ống kính gây cảm giác khá khó chịu cho người dùng.</p><img src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-114-1.jpg"><p></p>',
         'cart_id' => 1
     ),
     4 => array(
         'id' => 4,
-        'product title' => 'Laptop Apple MacBook Air 13 inch M1 2020',
+        'product_title' => 'Laptop Apple MacBook Air 13 inch M1 2020',
         'price' => 18450000,
         'code' => 'UNI#4',
         'product_desc' => 'Laptop Apple MacBook Air M1 2020 thuộc dòng laptop cao cấp sang trọng có cấu hình mạnh mẽ, chinh phục được các tính năng văn phòng lẫn đồ hoạ mà bạn mong muốn, thời lượng pin dài, thiết kế mỏng nhẹ sẽ đáp ứng tốt các nhu cầu làm việc của bạn.',
@@ -77,7 +73,7 @@ $list_product = array(
     ),
     5 => array(
         'id' => 5,
-        'product title' => 'Laptop Apple MacBook Air 13 inch M2 2022',
+        'product_title' => 'Laptop Apple MacBook Air 13 inch M2 2022',
         'price' => 26000000,
         'code' => 'UNI#5',
         'product_desc' => 'Sau 14 năm, ba lần sửa đổi và hai kiến trúc bộ vi xử lý khác nhau, kiểu dáng mỏng dần mang tính biểu tượng của MacBook Air đã đi vào lịch sử. Thay vào đó là một chiếc MacBook Air M2 với thiết kế hoàn toàn mới, độ dày không thay đổi tương tự như MacBook Pro, đánh bật mọi rào cản với con chip Apple M2 đầy mạnh mẽ.',
@@ -87,7 +83,7 @@ $list_product = array(
     ),
     6 => array(
         'id' => 6,
-        'product title' => 'Laptop Apple MacBook Air 15 inch M2 2023',
+        'product_title' => 'Laptop Apple MacBook Air 15 inch M2 2023',
         'price' => 30000000,
         'code' => 'UNI#6',
         'product_desc' => 'MacBook Air 15 inch M2 2023 đã có phiên bản cải tiến vừa được nhà Apple cho ra mắt, thêm không gian cho những điều bạn yêu với màn hình Liquid Retina 15 inch ấn tượng. Với người dùng yêu thích hiệu năng "nhanh như chớp" trong một thiết kế siêu gọn nhẹ của dòng Air thì đây chắc chắn là một sản phẩm bạn không nên bỏ qua.',

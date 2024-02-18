@@ -2,6 +2,10 @@
 get_header();
 ?>
 
+<?php
+$list_buy = get_list_by_cart();
+?>
+
 <div id="main-content-wp" class="cart-page">
     <div class="section" id="breadcrumb-wp">
         <div class="wp-inner">
@@ -25,69 +29,37 @@ get_header();
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>HCA00031</td>
-                            <td>
-                                <a href="" title="" class="thumb">
-                                    <img src="public/images/img-product.png" alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" title="" class="name-product">Đồ chơi trẻ em dưới 1 tuổi</a>
-                            </td>
-                            <td>5.000.000đ</td>
-                            <td>
-                                <input type="text" name="num-order" value="1" class="num-order">
-                            </td>
-                            <td>5.000.000đ</td>
-                            <td>
-                                <a href="" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>HCA00032</td>
-                            <td>
-                                <a href="" title="" class="thumb">
-                                    <img src="public/images/img-product.png" alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" title="" class="name-product">Đồ chơi trẻ em dưới 1 tuổi</a>
-                            </td>
-                            <td>7.000.000đ</td>
-                            <td>
-                                <input type="text" name="num-order" value="1" class="num-order">
-                            </td>
-                            <td>7.000.000đ</td>
-                            <td>
-                                <a href="" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>HCA00032</td>
-                            <td>
-                                <a href="" title="" class="thumb">
-                                    <img src="public/images/img-product.png" alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" title="" class="name-product">Đồ chơi trẻ em dưới 1 tuổi</a>
-                            </td>
-                            <td>7.000.000đ</td>
-                            <td>
-                                <input type="text" name="num-order" value="1" class="num-order">
-                            </td>
-                            <td>7.000.000đ</td>
-                            <td>
-                                <a href="" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
+                        <?php
+                        foreach ($list_buy as $item) {
+                        ?>
+                            <tr>
+                                <td><?php echo $item['code'] ?></td>
+                                <td>
+                                    <a href="<?php echo $item['url'] ?>" title="" class="thumb">
+                                        <img src="<?php echo $item['product_thumb'] ?>" alt="">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="<?php echo $item['url'] ?>" title="" class="name-product"><?php echo $item['product_title'] ?></a>
+                                </td>
+                                <td><?php echo curruncy_format($item['price']) ?></td>
+                                <td>
+                                    <input type="text" name="num-order" value="<?php echo $item['qty'] ?>" class="num-order">
+                                </td>
+                                <td><?php echo curruncy_format($item['sub_total']) ?></td>
+                                <td>
+                                    <a href="" title="Xóa sản phẩm" class="del-product"><i class="fa fa-trash-o"></i></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="7">
                                 <div class="clearfix">
-                                    <p id="total-price" class="fl-right">Tổng giá: <span>12.000.000đ</span></p>
+                                    <p id="total-price" class="fl-right">Tổng giá: <span><?php echo get_total_cart() ?></span></p>
                                 </div>
                             </td>
                         </tr>

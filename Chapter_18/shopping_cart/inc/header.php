@@ -27,7 +27,15 @@
                     <div id="cart-wp" class="fl-right">
                         <a href="?mod=cart&act=show" title="" id="btn-cart">
                             <span id="icon"><img src="public/images/icon-cart.png" alt=""></span>
-                            <span id="num">5</span>
+                            <?php
+                            if (!empty($_SESSION['cart'])) {
+                                if ($_SESSION['cart']['info']['num_order'] > 0) {
+                                    echo '<span id="num">' . $_SESSION['cart']['info']['num_order'] . '</span>';
+                                } else {
+                                    echo '<span id="num"></span>';
+                                }
+                            }
+                            ?>
                         </a>
                     </div>
                 </div>

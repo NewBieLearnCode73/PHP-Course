@@ -7,10 +7,10 @@ require 'data/page.php';
 require 'data/product.php';
 
 // Thư viện hàm
-
+require 'lib/number.php';
+require('lib/url.php');
 require 'lib/data.php';  // Chỉ chứa hàm xem mảng đó có in ra được dữ liệu hay không (Không có cũng được)
 require 'lib/template.php'; // Chứa header và footer
-require 'lib/number.php';
 require 'lib/pages.php';
 require 'lib/product.php';
 require 'lib/cart.php';

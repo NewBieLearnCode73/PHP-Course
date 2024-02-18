@@ -22,6 +22,7 @@ function add_cart($id)
         array(
             'id' => $item[$id],
             'product_title' => $item['product_title'],
+            'url' => $item['url'],
             'price' => $item['price'],
             'product_thumb' => $item['product_thumb'], // Đường dẫn ảnh
             'code' => $item['code'],
@@ -30,7 +31,6 @@ function add_cart($id)
         );
 
     update_info_cart(); // Cập nhật thông tin giỏ hàng
-    show_array($_SESSION['cart']['info']);
 }
 
 function update_info_cart()
@@ -48,4 +48,20 @@ function update_info_cart()
         'num_order' => $num_order,
         'total' => $total
     );
+}
+
+function get_list_by_cart()
+{
+    if (isset($_SESSION['cart']['buy'])) {
+        return $_SESSION['cart']['buy'];
+    }
+    return false;
+}
+
+function get_total_cart()
+{
+    if (isset($_SESSION['cart']['info'])) {
+        return curruncy_format($_SESSION['cart']['info']['total']);
+    }
+    return 0;
 }

@@ -30,28 +30,34 @@ $list_buy = get_list_by_cart();
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($list_buy as $item) {
+                        if (!empty($list_buy)) {
                         ?>
-                            <tr>
-                                <td><?php echo $item['code'] ?></td>
-                                <td>
-                                    <a href="<?php echo $item['url'] ?>" title="" class="thumb">
-                                        <img src="<?php echo $item['product_thumb'] ?>" alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="<?php echo $item['url'] ?>" title="" class="name-product"><?php echo $item['product_title'] ?></a>
-                                </td>
-                                <td><?php echo curruncy_format($item['price']) ?></td>
-                                <td>
-                                    <input type="text" name="num-order" value="<?php echo $item['qty'] ?>" class="num-order">
-                                </td>
-                                <td><?php echo curruncy_format($item['sub_total']) ?></td>
-                                <td>
-                                    <a href="" title="Xóa sản phẩm" class="del-product"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                        <?php } ?>
+                            <?php
+                            foreach ($list_buy as $item) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $item['code'] ?></td>
+                                    <td>
+                                        <a href="<?php echo $item['url'] ?>" title="" class="thumb">
+                                            <img src="<?php echo $item['product_thumb'] ?>" alt="">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo $item['url'] ?>" title="" class="name-product"><?php echo $item['product_title'] ?></a>
+                                    </td>
+                                    <td><?php echo curruncy_format($item['price']) ?></td>
+                                    <td>
+                                        <input type="text" name="num-order" value="<?php echo $item['qty'] ?>" class="num-order">
+                                    </td>
+                                    <td><?php echo curruncy_format($item['sub_total']) ?></td>
+                                    <td>
+                                        <a href="" title="Xóa sản phẩm" class="del-product"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        <?php
+                        }
+                        ?>
 
 
                     </tbody>

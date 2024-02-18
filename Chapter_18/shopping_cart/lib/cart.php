@@ -20,7 +20,7 @@ function add_cart($id)
 
     $_SESSION['cart']['buy'][$id] =
         array(
-            'id' => $item[$id],
+            'id' => $item['id'],
             'product_title' => $item['product_title'],
             'url' => $item['url'],
             'price' => $item['price'],
@@ -33,6 +33,7 @@ function add_cart($id)
     update_info_cart(); // Cập nhật thông tin giỏ hàng
 }
 
+// Cập nhật lại thông tin giỏ hàng
 function update_info_cart()
 {
     $num_order = 0;
@@ -52,7 +53,11 @@ function update_info_cart()
 
 function get_list_by_cart()
 {
-    if (isset($_SESSION['cart']['buy'])) {
+    if (isset($_SESSION['cart'])) {
+        // Tạo cho các phần tử bên trong thêm 1 trường mới
+        foreach ($_SESSION['cart']['buy'] as &$item) {
+            $item['url_delete_cart'] = "?mod=cart&act=delete&id={$item['id']}"; // Đường dẫn xóa sản phẩm
+        }
         return $_SESSION['cart']['buy'];
     }
     return false;
@@ -64,4 +69,26 @@ function get_total_cart()
         return curruncy_format($_SESSION['cart']['info']['total']);
     }
     return 0;
+}
+
+function delete_cart($id = "")
+{
+    if (isset($_SESSION['cart'])) {
+        #Xóa sản phẩm có $id trong giỏ hàng
+        if (!empty($_SESSION['cart']['buy'][$id])) {
+            unset($_SESSION['cart']['buy'][$id]);
+            update_info_cart();
+        } else {
+            unset($_SESSION['cart']);
+        }
+    }
+}
+
+function update_cart($qty)
+{
+    foreach ($qty as $id => $new_qty) {
+        $_SESSION['cart']['buy'][$id]['qty'] = $new_qty;
+        $_SESSION['cart']['buy'][$id]['sub_total'] = $_SESSION['cart']['buy'][$id]['price'] * $new_qty;
+        update_info_cart();
+    }
 }

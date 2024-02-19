@@ -109,29 +109,8 @@ foreach ($list_user as &$user) {
     </table>
 
     <p class="numb_row">Tổng số thành viên: <?php echo count($result); ?></p>
-    <ul class="pagging">
-        <li>
-            <a href="">Trước</a>
-        </li>
-        <li>
-            <a href="?mod=users&act=main&page=1">1</a>
-        </li>
-        <li>
-            <a href="?mod=users&act=main&page=2">2</a>
-        </li>
-        <li>
-            <a href="?mod=users&act=main&page=3">3</a>
-        </li>
-        <li>
-            <a href="?mod=users&act=main&page=4">4</a>
-        </li>
-        <li>
-            <a href="?mod=users&act=main&page=5">5</a>
-        </li>
-        <li>
-            <a href="">Sau</a>
-        </li>
-    </ul>
+
+    <?php echo get_pagging($num_page, $page, "?mod=users&act=main") ?>
 </div>
 <?php
 get_footer();

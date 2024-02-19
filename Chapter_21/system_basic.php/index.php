@@ -1,6 +1,7 @@
 <?php
 require 'db/connect.php'; // Chứa kết nối database
 require 'data/post.php'; // Chứa mảng dữ liệu bài viết
+require 'lib/url.php'; // Chứa hàm chuyển đổi URL
 require 'lib/data.php';  // Chỉ chứa hàm xem mảng đó có in ra được dữ liệu hay không (Không có cũng được)
 require 'lib/template.php'; // Chứa header và footer
 ?>

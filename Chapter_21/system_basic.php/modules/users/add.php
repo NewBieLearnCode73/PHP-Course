@@ -134,7 +134,7 @@ function check_success()
     if (!empty($arlert)) {
         if (isset($arlert['success'])) {
             echo '<p class="show-success">' . $arlert['success'] . '</p>';
-            return true;
+            redirect("?mod=users&act=main");
         } else {
             echo '<p class="show-error">' . $arlert['false'] . '</p>';
             return true;

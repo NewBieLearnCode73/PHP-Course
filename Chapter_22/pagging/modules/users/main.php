@@ -15,17 +15,13 @@ try {
 }
 
 
-foreach ($result as &$user) {
-    $user['url_update'] = "?mod=users&act=update&id=" . $user['id'];
-    $user['url_delete'] = "?mod=users&act=delete&id=" . $user['id'];
-}
 
 // Lấy số lượng bản ghi
 $num_rows = $stmt->rowCount();
 
 
 // Số lượng bản ghi mỗi trang
-$numb_per_page = 3;
+$numb_per_page = 5;
 // Tổng số bản ghi
 $total_row = $num_rows;
 
@@ -38,6 +34,21 @@ echo "Số bản ghi: " . $num_page . "<br>";
 echo "Trang hiện tại: " . $page . "<br>";
 echo "Xuất phát: " . $start . "<br>";
 
+// Lấy danh sách bản ghi
+$sql = "SELECT * FROM users ORDER BY id ASC LIMIT {$start}, {$numb_per_page}";
+try {
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $list_user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Lỗi: " . $e->getMessage();
+}
+
+// Thêm URL cho thao tác
+foreach ($list_user as &$user) {
+    $user['url_update'] = "?mod=users&act=update&id=" . $user['id'];
+    $user['url_delete'] = "?mod=users&act=delete&id=" . $user['id'];
+}
 
 ?>
 
@@ -77,8 +88,8 @@ echo "Xuất phát: " . $start . "<br>";
         </thead>
         <tbody>
             <?php
-            $temp = 1;
-            foreach ($result as $user) {
+            $temp = $start + 1;
+            foreach ($list_user as $user) {
             ?>
                 <tr>
                     <td><?php echo $temp; ?></td>
